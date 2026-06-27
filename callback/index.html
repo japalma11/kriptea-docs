@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kriptea — TikTok Auth</title>
+  <style>
+    body { font-family: monospace; background: #0D1117; color: #F0F6FC;
+           display: flex; align-items: center; justify-content: center;
+           min-height: 100vh; margin: 0; padding: 24px; box-sizing: border-box; }
+    .card { background: #161B22; border: 1px solid #30363D; border-radius: 12px;
+            padding: 40px; max-width: 640px; width: 100%; text-align: center; }
+    h1 { color: #00D68F; font-size: 22px; margin-bottom: 8px; }
+    p { color: #8B949E; font-size: 14px; margin-bottom: 24px; }
+    .code-box { background: #0D1117; border: 1px solid #00D68F; border-radius: 8px;
+                padding: 16px; word-break: break-all; font-size: 13px;
+                color: #00D68F; margin-bottom: 16px; text-align: left; }
+    .error { color: #FF4757; }
+    button { background: #00D68F; color: #000; border: none; border-radius: 8px;
+             padding: 10px 24px; font-size: 14px; font-weight: 700; cursor: pointer; }
+    button:hover { opacity: .85; }
+  </style>
+</head>
+<body>
+<div class="card">
+  <h1 id="title">Procesando...</h1>
+  <p id="subtitle"></p>
+  <div class="code-box" id="code-box" style="display:none"></div>
+  <button id="copy-btn" style="display:none" onclick="copyCode()">Copiar código</button>
+</div>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const code  = params.get('code');
+  const error = params.get('error');
+  const state = params.get('state');
+
+  if (error) {
+    document.getElementById('title').textContent = '❌ Error de autorización';
+    document.getElementById('title').className = 'error';
+    document.getElementById('subtitle').textContent = error + ': ' + (params.get('error_description') || '');
+  } else if (code) {
+    document.getElementById('title').textContent = '✅ ¡Autorización exitosa!';
+    document.getElementById('subtitle').textContent =
+      'Copia este código y pégalo en la terminal donde corre auth_setup.py:';
+    const box = document.getElementById('code-box');
+    box.textContent = code;
+    box.style.display = 'block';
+    document.getElementById('copy-btn').style.display = 'inline-block';
+    // Also store in sessionStorage as backup
+    sessionStorage.setItem('tiktok_code', code);
+    sessionStorage.setItem('tiktok_state', state || '');
+  } else {
+    document.getElementById('title').textContent = '⚠️ Sin código';
+    document.getElementById('subtitle').textContent = 'No se recibió ningún código de autorización.';
+  }
+
+  function copyCode() {
+    navigator.clipboard.writeText(document.getElementById('code-box').textContent)
+      .then(() => { document.getElementById('copy-btn').textContent = '✓ Copiado!'; })
+      .catch(() => { alert('Copia manualmente el código de arriba.'); });
+  }
+</script>
+</body>
+</html>

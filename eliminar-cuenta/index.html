@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eliminar cuenta — Kriptea</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0D1117;
+      color: #F0F6FC;
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid #30363D;
+    }
+
+    header .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #00D68F;
+    }
+
+    header .tagline {
+      font-size: 0.85rem;
+      color: #8B949E;
+    }
+
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #F0F6FC;
+      margin-bottom: 0.5rem;
+    }
+
+    .updated {
+      font-size: 0.85rem;
+      color: #8B949E;
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #00D68F;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      color: #8B949E;
+      margin-bottom: 0.75rem;
+    }
+
+    ul {
+      color: #8B949E;
+      padding-left: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    ul li { margin-bottom: 0.35rem; }
+
+    .steps {
+      counter-reset: steps;
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .steps li {
+      counter-increment: steps;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+    }
+
+    .steps li::before {
+      content: counter(steps);
+      background: #00D68F;
+      color: #0D1117;
+      font-weight: 800;
+      font-size: 0.85rem;
+      min-width: 1.75rem;
+      height: 1.75rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .info-box {
+      background: #161B22;
+      border: 1px solid #30363D;
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .info-box a {
+      color: #00D68F;
+      text-decoration: none;
+    }
+
+    .info-box a:hover { text-decoration: underline; }
+
+    .warning-box {
+      background: #1C1200;
+      border: 1px solid #4D3000;
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .warning-box p {
+      color: #D29922;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #30363D;
+      margin: 2rem 0;
+    }
+
+    strong { color: #F0F6FC; }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #30363D;
+      font-size: 0.8rem;
+      color: #6E7681;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <div>
+        <div class="logo">Kriptea</div>
+        <div class="tagline">Crypto en español, simple</div>
+      </div>
+    </header>
+
+    <h1>Eliminar cuenta y datos</h1>
+    <p class="updated">Última actualización: 15 de abril de 2026</p>
+
+    <p>En Kriptea respetamos tu derecho a controlar tus datos personales. Si deseas eliminar tu cuenta y los datos asociados, sigue las instrucciones a continuación.</p>
+
+    <hr />
+
+    <h2>Cómo solicitar la eliminación</h2>
+
+    <p>Envía un correo electrónico con los siguientes datos:</p>
+
+    <div class="info-box">
+      <p><strong>Email:</strong> <a href="mailto:japasas11+kriptea@gmail.com">japasas11+kriptea@gmail.com</a></p>
+      <p><strong>Asunto:</strong> Eliminar cuenta Kriptea</p>
+      <p><strong>Incluye en el mensaje:</strong></p>
+      <ul style="margin-top: 0.5rem;">
+        <li>La dirección de correo electrónico asociada a tu cuenta de Google con la que iniciaste sesión en Kriptea</li>
+        <li>Confirmación de que deseas eliminar tu cuenta y todos los datos asociados</li>
+      </ul>
+    </div>
+
+    <p>Procesaremos tu solicitud en un plazo máximo de <strong>30 días hábiles</strong> y te confirmaremos la eliminación por correo electrónico.</p>
+
+    <hr />
+
+    <h2>Qué datos se eliminan</h2>
+
+    <ul>
+      <li><strong>Perfil de usuario:</strong> nombre, correo electrónico e identificador de cuenta de Google</li>
+      <li><strong>Watchlist:</strong> lista de criptomonedas sincronizada en nuestros servidores (usuarios Pro)</li>
+      <li><strong>Historial de uso:</strong> datos de actividad asociados a tu cuenta</li>
+    </ul>
+
+    <h2>Qué datos se conservan</h2>
+
+    <ul>
+      <li><strong>Historial de transacciones:</strong> los registros de compras de suscripción son gestionados por Google Play Billing y RevenueCat, y pueden conservarse según sus políticas propias para cumplir obligaciones legales y contables.</li>
+      <li><strong>Datos anónimos:</strong> datos de uso agregados y anónimos que no permiten identificarte.</li>
+    </ul>
+
+    <div class="warning-box">
+      <p><strong>Importante:</strong> La eliminación de la cuenta es irreversible. Tu watchlist sincronizado y preferencias de usuario no podrán recuperarse una vez eliminados.</p>
+    </div>
+
+    <hr />
+
+    <h2>Cancelar suscripción</h2>
+
+    <p>Si tienes una suscripción Pro activa, te recomendamos cancelarla antes de solicitar la eliminación de cuenta. Puedes hacerlo directamente desde:</p>
+
+    <ol class="steps">
+      <li><span>Abre Google Play Store en tu dispositivo Android</span></li>
+      <li><span>Ve a <strong>Perfil → Pagos y suscripciones → Suscripciones</strong></span></li>
+      <li><span>Selecciona <strong>Kriptea</strong> y toca <strong>Cancelar suscripción</strong></span></li>
+    </ol>
+
+    <hr />
+
+    <div class="info-box">
+      <p>¿Tienes preguntas? Contáctanos en <a href="mailto:japasas11+kriptea@gmail.com">japasas11+kriptea@gmail.com</a></p>
+      <p style="margin-top: 0.5rem;">También puedes revisar nuestra <a href="/privacidad/">Política de Privacidad</a> completa.</p>
+    </div>
+
+    <footer>
+      &copy; 2026 Kriptea · <a href="/" style="color:#00D68F; text-decoration:none;">kriptea.com</a>
+    </footer>
+
+  </div>
+</body>
+</html>

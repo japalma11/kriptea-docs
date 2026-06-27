@@ -3,8 +3,399 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kriptea</title>
-  <meta http-equiv="refresh" content="0; url=/privacidad/" />
+  <title>Kriptea — Crypto en español, simple</title>
+  <meta name="description" content="Kriptea: crypto en español, simple. Noticias de Bitcoin, Ethereum, DeFi y más explicadas sin tecnicismos. Gratis en Android." />
+  <meta property="og:title" content="Kriptea — Crypto en español, simple" />
+  <meta property="og:description" content="Crypto en español, simple. Mantente al día con el mercado sin perder tiempo." />
+  <meta property="og:image" content="https://kriptea.com/icon.png" />
+  <link rel="icon" href="./icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #0D1117;
+      --bg2:      #161B22;
+      --card:     #1C2128;
+      --border:   #30363D;
+      --primary:  #00D68F;
+      --primary-dark: #00B377;
+      --primary-light:#33E0A5;
+      --accent:   #58A6FF;
+      --bearish:  #FF4757;
+      --white:    #F0F6FC;
+      --text:     #C9D1D9;
+      --muted:    #8B949E;
+      --radius:   14px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 32px;
+      background: rgba(13,17,23,0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none;
+    }
+    .nav-logo img { width: 36px; height: 36px; border-radius: 8px; }
+    .nav-logo span {
+      font-size: 20px; font-weight: 800; color: var(--white); letter-spacing: -0.5px;
+    }
+    .nav-logo span em { color: var(--primary); font-style: normal; }
+    .nav-cta {
+      background: var(--primary); color: #000; font-weight: 700;
+      padding: 10px 22px; border-radius: 50px; font-size: 14px;
+      text-decoration: none; transition: opacity .2s, transform .2s;
+    }
+    .nav-cta:hover { opacity: .85; transform: translateY(-1px); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; padding: 130px 24px 80px;
+      background: radial-gradient(ellipse 70% 55% at 50% 0%, rgba(0,214,143,0.1) 0%, transparent 65%);
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0; pointer-events: none;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%2300D68F' fill-opacity='0.035'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(0,214,143,0.1); border: 1px solid rgba(0,214,143,0.3);
+      color: var(--primary); padding: 6px 18px; border-radius: 50px;
+      font-size: 13px; font-weight: 600; margin-bottom: 28px; letter-spacing: 0.4px;
+    }
+    .badge-dot { width: 7px; height: 7px; background: var(--primary); border-radius: 50%; }
+
+    .hero-logo {
+      width: 90px; height: 90px; border-radius: 22px;
+      margin-bottom: 28px;
+      box-shadow: 0 0 48px rgba(0,214,143,0.25);
+    }
+
+    h1 {
+      font-size: clamp(40px, 8vw, 86px);
+      font-weight: 900; line-height: 1.05; letter-spacing: -2px;
+      margin-bottom: 24px;
+    }
+    h1 span { color: var(--primary); }
+
+    .hero-sub {
+      font-size: clamp(16px, 2.5vw, 19px); color: var(--text);
+      max-width: 540px; margin: 0 auto 44px;
+    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--primary); color: #000; font-weight: 800;
+      padding: 16px 32px; border-radius: 50px; font-size: 16px;
+      text-decoration: none; transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 0 28px rgba(0,214,143,0.3);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 44px rgba(0,214,143,0.5); }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: transparent; color: var(--white); font-weight: 600;
+      padding: 16px 32px; border-radius: 50px; font-size: 16px;
+      text-decoration: none; border: 1px solid var(--border);
+      transition: border-color .2s, color .2s;
+    }
+    .btn-secondary:hover { border-color: var(--primary); color: var(--primary); }
+
+    .hero-stats {
+      display: flex; gap: 48px; margin-top: 70px; flex-wrap: wrap; justify-content: center;
+    }
+    .stat { text-align: center; }
+    .stat-num { font-size: 34px; font-weight: 900; color: var(--primary); }
+    .stat-label { font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+    /* ── FEATURES ── */
+    .section {
+      padding: 100px 24px;
+      max-width: 1100px; margin: 0 auto;
+    }
+    .section-tag {
+      color: var(--primary); font-size: 12px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px;
+    }
+    h2 {
+      font-size: clamp(28px, 5vw, 46px); font-weight: 800;
+      letter-spacing: -1px; margin-bottom: 16px; line-height: 1.15;
+    }
+    .section-sub { color: var(--text); font-size: 17px; max-width: 500px; margin-bottom: 60px; }
+
+    .features-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px;
+    }
+    .feature-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 30px;
+      transition: border-color .2s, transform .2s;
+    }
+    .feature-card:hover { border-color: rgba(0,214,143,0.4); transform: translateY(-4px); }
+    .feature-icon {
+      width: 46px; height: 46px; border-radius: 12px;
+      background: rgba(0,214,143,0.1); display: flex; align-items: center;
+      justify-content: center; font-size: 20px; margin-bottom: 18px;
+      border: 1px solid rgba(0,214,143,0.2);
+    }
+    .feature-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 9px; }
+    .feature-card p { color: var(--text); font-size: 14px; line-height: 1.65; }
+
+    /* ── HOW ── */
+    .how-section {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 100px 24px;
+    }
+    .how-inner { max-width: 1100px; margin: 0 auto; }
+    .steps {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 32px; margin-top: 60px;
+    }
+    .step { text-align: center; }
+    .step-num {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #000; font-weight: 900; font-size: 20px;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 18px;
+    }
+    .step h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .step p { color: var(--text); font-size: 14px; }
+
+    /* ── SENTIMENT ── */
+    .sentiment-section { max-width: 1100px; margin: 0 auto; padding: 100px 24px; }
+    .sentiment-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 60px;
+    }
+    .sent-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 28px 24px; text-align: center;
+    }
+    .sent-card.bullish { border-color: rgba(0,214,143,0.3); }
+    .sent-card.bearish { border-color: rgba(255,71,87,0.3); }
+    .sent-card.neutral { border-color: rgba(240,165,0,0.3); }
+    .sent-dot {
+      width: 12px; height: 12px; border-radius: 50%; margin: 0 auto 12px;
+    }
+    .bullish .sent-dot { background: var(--primary); }
+    .bearish .sent-dot { background: var(--bearish); }
+    .neutral .sent-dot { background: #F0A500; }
+    .sent-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+    .sent-card p { font-size: 13px; color: var(--muted); }
+
+    /* ── CTA ── */
+    .cta-section {
+      padding: 120px 24px;
+      text-align: center;
+      background: radial-gradient(ellipse 60% 50% at 50% 100%, rgba(0,214,143,0.08) 0%, transparent 70%);
+    }
+    .cta-section h2 { margin-bottom: 16px; }
+    .cta-section p { color: var(--text); font-size: 17px; margin-bottom: 44px; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 24px;
+      text-align: center; color: var(--muted); font-size: 13px;
+    }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--primary); }
+
+    .gplay-icon { width: 18px; height: 18px; }
+
+    @media (max-width: 640px) {
+      nav { padding: 12px 18px; }
+      .hero { padding: 100px 20px 60px; }
+      .hero-stats { gap: 28px; }
+      .section { padding: 70px 20px; }
+      .sentiment-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
-<body></body>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="/">
+    <img src="./logo.png" alt="Kriptea logo" />
+    <span>Krip<em>tea</em></span>
+  </a>
+  <a class="nav-cta" href="https://play.google.com/store/apps/details?id=com.kriptea" target="_blank" rel="noopener">
+    Descargar gratis
+  </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="badge"><span class="badge-dot"></span> Disponible en Android</div>
+  <img class="hero-logo" src="./icon.png" alt="Kriptea app" />
+  <h1>Crypto en español,<br /><span>simple.</span></h1>
+  <p class="hero-sub">
+    Bitcoin, Ethereum, DeFi y altcoins explicados sin tecnicismos.
+    Mantente al día con el mercado cripto en 30 segundos.
+  </p>
+  <div class="hero-actions">
+    <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.kriptea" target="_blank" rel="noopener">
+      <svg class="gplay-icon" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M3.18 23.76c.3.17.64.24.99.2l12.49-11.54L13.12 9l-9.94 14.76zM20.07 10.37l-2.79-1.62-3.56 3.29 3.56 3.29 2.82-1.64c.8-.47.8-1.86-.03-2.32zM2.01 1.05C1.85 1.32 1.77 1.65 1.77 2v20c0 .35.08.68.24.95L13.12 12 2.01 1.05zM3.18.24l9.94 9.42 3.54-3.27L4.17.03c-.36-.2-.7-.18-.99.21z"/>
+      </svg>
+      Google Play
+    </a>
+    <a class="btn-secondary" href="#features">Ver características</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">50+</div>
+      <div class="stat-label">Noticias diarias</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">En español</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">Gratis</div>
+      <div class="stat-label">Descarga gratuita</div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section" id="features">
+  <div class="section-tag">¿Por qué Kriptea?</div>
+  <h2>Todo lo que necesitas<br />saber del mundo cripto</h2>
+  <p class="section-sub">Sin tecnicismos. Sin ruido. Solo lo que importa, explicado claro.</p>
+
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">📰</div>
+      <h3>Noticias al instante</h3>
+      <p>Las últimas novedades de Bitcoin, Ethereum, altcoins y el mercado cripto actualizadas constantemente.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">💡</div>
+      <h3>Explicadas simple</h3>
+      <p>Cada noticia responde: ¿Qué pasó?, ¿Por qué importa? y ¿Cómo te afecta? En segundos lo entiendes todo.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🌎</div>
+      <h3>Para Latinoamérica</h3>
+      <p>Contenido pensado para el mundo hispano, con foco en lo que impacta nuestra región.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📊</div>
+      <h3>Sentimiento del mercado</h3>
+      <p>Cada noticia viene etiquetada: alcista, bajista o neutral. Entiende el contexto de un vistazo.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔔</div>
+      <h3>Siempre actualizado</h3>
+      <p>Feed que se renueva constantemente para que nunca te pierdas lo que pasa en el mercado.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🚀</div>
+      <h3>Gratis para empezar</h3>
+      <p>Descárgala sin costo. Empieza a informarte hoy sobre el mundo de las criptomonedas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SENTIMIENTO -->
+<section class="how-section">
+  <div class="how-inner">
+    <div class="section-tag" style="text-align:center">Sentimiento del mercado</div>
+    <h2 style="text-align:center">Entiende el mercado<br />de un vistazo</h2>
+    <div class="sentiment-grid">
+      <div class="sent-card bullish">
+        <div class="sent-dot"></div>
+        <h3 style="color:#00D68F">Alcista</h3>
+        <p>Noticias positivas que pueden impulsar el precio o el ecosistema cripto.</p>
+      </div>
+      <div class="sent-card bearish">
+        <div class="sent-dot"></div>
+        <h3 style="color:#FF4757">Bajista</h3>
+        <p>Eventos negativos que podrían afectar el mercado o tus inversiones.</p>
+      </div>
+      <div class="sent-card neutral">
+        <div class="sent-dot"></div>
+        <h3 style="color:#F0A500">Neutral</h3>
+        <p>Novedades informativas sin un impacto claro en ninguna dirección.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO FUNCIONA -->
+<section class="sentiment-section">
+  <div class="section-tag">Cómo funciona</div>
+  <h2>Informarse nunca fue<br />tan fácil</h2>
+  <div class="steps" style="margin-top:48px">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Descarga la app</h3>
+      <p>Gratis en Google Play. Sin registro obligatorio para empezar a leer.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>Abre el feed</h3>
+      <p>Ve las últimas noticias ordenadas por relevancia. Siempre frescas.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>Lee y decide</h3>
+      <p>3 preguntas clave por noticia. En 30 segundos sabes todo lo que importa.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-section">
+  <div class="section-tag">Empieza hoy</div>
+  <h2>El mercado no espera.<br /><span style="color:var(--primary)">Tú tampoco deberías.</span></h2>
+  <p>Únete a los usuarios que ya se informan con Kriptea.<br />Descarga gratis en Android.</p>
+  <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.kriptea" target="_blank" rel="noopener" style="font-size:17px; padding:18px 44px;">
+    <svg class="gplay-icon" viewBox="0 0 24 24" fill="currentColor" style="width:20px;height:20px">
+      <path d="M3.18 23.76c.3.17.64.24.99.2l12.49-11.54L13.12 9l-9.94 14.76zM20.07 10.37l-2.79-1.62-3.56 3.29 3.56 3.29 2.82-1.64c.8-.47.8-1.86-.03-2.32zM2.01 1.05C1.85 1.32 1.77 1.65 1.77 2v20c0 .35.08.68.24.95L13.12 12 2.01 1.05zM3.18.24l9.94 9.42 3.54-3.27L4.17.03c-.36-.2-.7-.18-.99.21z"/>
+    </svg>
+    Descargar en Google Play
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>
+    © 2026 Kavzen ·
+    <a href="https://kriptea.com/privacidad/">Política de privacidad</a>
+    &nbsp;·&nbsp;
+    <a href="mailto:privacidad@kriptea.com">privacidad@kriptea.com</a>
+    &nbsp;·&nbsp;
+    Hecho con ☕ para Latinoamérica
+  </p>
+</footer>
+
+</body>
 </html>
