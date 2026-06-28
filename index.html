@@ -3,15 +3,156 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kriptea — Crypto en español, simple</title>
-  <meta name="description" content="Kriptea: crypto en español, simple. Noticias de Bitcoin, Ethereum, DeFi y más explicadas sin tecnicismos. Gratis en Android." />
-  <meta property="og:title" content="Kriptea — Crypto en español, simple" />
-  <meta property="og:description" content="Crypto en español, simple. Mantente al día con el mercado sin perder tiempo." />
+  <meta name="theme-color" content="#00D68F" />
+
+  <!-- SEO -->
+  <title>Kriptea | Noticias de Criptomonedas en Español — App Gratis Android</title>
+  <meta name="description" content="Kriptea: la app gratuita de noticias de criptomonedas en español para Android. Bitcoin, Ethereum, DeFi y altcoins explicados sin tecnicismos. Más de 50 noticias diarias para Latinoamérica." />
+  <meta name="author" content="Kavzen" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://kriptea.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://kriptea.com/" />
+  <meta property="og:site_name" content="Kriptea" />
+  <meta property="og:locale" content="es_419" />
+  <meta property="og:title" content="Kriptea | Noticias de Criptomonedas en Español" />
+  <meta property="og:description" content="App gratuita de noticias crypto en español para Android. Bitcoin, Ethereum, DeFi y altcoins explicados sin tecnicismos. Para Latinoamérica." />
   <meta property="og:image" content="https://kriptea.com/icon.png" />
+  <meta property="og:image:width" content="512" />
+  <meta property="og:image:height" content="512" />
+  <meta property="og:image:alt" content="Kriptea — App de noticias de criptomonedas en español" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kriptea | Noticias de Criptomonedas en Español" />
+  <meta name="twitter:description" content="App gratuita de noticias crypto en español para Android. Bitcoin, Ethereum, DeFi y altcoins explicados sin tecnicismos." />
+  <meta name="twitter:image" content="https://kriptea.com/icon.png" />
+
+  <!-- Icons -->
   <link rel="icon" href="./icon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="apple-touch-icon" href="https://kriptea.com/icon.png" />
+  <link rel="preload" as="image" href="./icon.webp" type="image/webp" fetchpriority="high" />
+
+  <!-- Idioma / Región (hreflang) -->
+  <link rel="alternate" hreflang="es" href="https://kriptea.com/" />
+  <link rel="alternate" hreflang="es-419" href="https://kriptea.com/" />
+
+  <!-- Structured Data JSON-LD (SEO + GEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://kriptea.com/#website",
+        "url": "https://kriptea.com",
+        "name": "Kriptea",
+        "description": "Noticias de criptomonedas en español para Latinoamérica",
+        "inLanguage": "es",
+        "publisher": { "@id": "https://kriptea.com/#organization" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://kriptea.com/#organization",
+        "name": "Kavzen",
+        "url": "https://kriptea.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://kriptea.com/logo.png"
+        },
+        "email": "privacidad@kriptea.com",
+        "description": "Empresa creadora de Kriptea, la app de noticias de criptomonedas en español para Latinoamérica."
+      },
+      {
+        "@type": "MobileApplication",
+        "@id": "https://kriptea.com/#app",
+        "name": "Kriptea",
+        "description": "App gratuita de noticias de criptomonedas en español para Android. Más de 50 noticias diarias de Bitcoin, Ethereum, DeFi y altcoins, explicadas sin tecnicismos para Latinoamérica.",
+        "operatingSystem": "Android",
+        "applicationCategory": "NewsApplication",
+        "inLanguage": "es",
+        "url": "https://kriptea.com",
+        "downloadUrl": "https://play.google.com/store/apps/details?id=com.kriptea",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "screenshot": {
+          "@type": "ImageObject",
+          "url": "https://kriptea.com/icon.png"
+        },
+        "publisher": { "@id": "https://kriptea.com/#organization" }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://kriptea.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Qué es Kriptea?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Kriptea es una aplicación gratuita para Android que entrega noticias de criptomonedas en español, sin tecnicismos. Cubre Bitcoin, Ethereum, DeFi, altcoins y el mercado cripto en general, con enfoque en Latinoamérica."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cómo puedo seguir las noticias de criptomonedas en español?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Descarga Kriptea gratis en Google Play. La app entrega más de 50 noticias de cripto diarias en español, explicadas de forma simple: qué pasó, por qué importa y cómo te afecta."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Kriptea es gratuita?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí, completamente gratuita. Puedes descargarla desde Google Play sin costo y sin registro obligatorio para comenzar a leer noticias de criptomonedas."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué criptomonedas cubre Kriptea?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Kriptea cubre Bitcoin (BTC), Ethereum (ETH), DeFi, altcoins, stablecoins y el mercado cripto en general. Cada noticia incluye un indicador de sentimiento de mercado: alcista, bajista o neutral."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Está disponible Kriptea para iPhone o iOS?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Por ahora Kriptea está disponible únicamente para Android a través de Google Play. Próximamente en más plataformas."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Kriptea está disponible para Latinoamérica?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí. Kriptea está pensada especialmente para usuarios hispanohablantes de Latinoamérica. El contenido está completamente en español y considera el impacto de las noticias cripto en la región."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
   <style>
+    @font-face {
+      font-family: 'Inter';
+      src: url('/fonts/InterVariable.woff2') format('woff2');
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: optional;
+    }
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -228,12 +369,33 @@
 
     .gplay-icon { width: 18px; height: 18px; }
 
+    /* ── FAQ ── */
+    .faq-list { margin-top: 48px; display: flex; flex-direction: column; gap: 12px; }
+    .faq-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 22px 26px;
+      transition: border-color .2s;
+    }
+    .faq-item[open] { border-color: rgba(0,214,143,0.4); }
+    .faq-item summary {
+      font-size: 16px; font-weight: 600; cursor: pointer;
+      list-style: none; display: flex; justify-content: space-between; align-items: center;
+      gap: 16px;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: '+'; color: var(--primary); font-size: 22px; font-weight: 400; flex-shrink: 0; }
+    .faq-item[open] summary::after { content: '−'; }
+    .faq-item p { margin-top: 14px; color: var(--text); font-size: 14px; line-height: 1.7; }
+
     @media (max-width: 640px) {
       nav { padding: 12px 18px; }
       .hero { padding: 100px 20px 60px; }
       .hero-stats { gap: 28px; }
       .section { padding: 70px 20px; }
       .sentiment-grid { grid-template-columns: 1fr; }
+      .faq-list { margin-top: 32px; }
+      .faq-item { padding: 16px 18px; }
     }
   </style>
 </head>
@@ -242,7 +404,10 @@
 <!-- NAV -->
 <nav>
   <a class="nav-logo" href="/">
-    <img src="./logo.png" alt="Kriptea logo" />
+    <picture>
+      <source srcset="./logo.webp" type="image/webp" />
+      <img src="./logo.png" alt="Kriptea logo" width="36" height="36" />
+    </picture>
     <span>Krip<em>tea</em></span>
   </a>
   <a class="nav-cta" href="https://play.google.com/store/apps/details?id=com.kriptea" target="_blank" rel="noopener">
@@ -253,7 +418,10 @@
 <!-- HERO -->
 <section class="hero">
   <div class="badge"><span class="badge-dot"></span> Disponible en Android</div>
-  <img class="hero-logo" src="./icon.png" alt="Kriptea app" />
+  <picture>
+    <source srcset="./icon.webp" type="image/webp" />
+    <img class="hero-logo" src="./icon.png" alt="Kriptea app" width="90" height="90" fetchpriority="high" />
+  </picture>
   <h1>Crypto en español,<br /><span>simple.</span></h1>
   <p class="hero-sub">
     Bitcoin, Ethereum, DeFi y altcoins explicados sin tecnicismos.
@@ -369,6 +537,39 @@
       <h3>Lee y decide</h3>
       <p>3 preguntas clave por noticia. En 30 segundos sabes todo lo que importa.</p>
     </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="section-tag">Preguntas frecuentes</div>
+  <h2>Todo lo que quieres<br />saber de Kriptea</h2>
+  <p class="section-sub">Respuestas directas sobre la app de noticias de criptomonedas en español.</p>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary>¿Qué es Kriptea?</summary>
+      <p>Kriptea es una aplicación gratuita para Android que entrega noticias de criptomonedas en español, sin tecnicismos. Cubre Bitcoin, Ethereum, DeFi, altcoins y el mercado cripto en general, con enfoque en Latinoamérica.</p>
+    </details>
+    <details class="faq-item">
+      <summary>¿Cómo puedo seguir las noticias de criptomonedas en español?</summary>
+      <p>Descarga Kriptea gratis en Google Play. La app entrega más de 50 noticias de cripto diarias en español, explicadas de forma simple: qué pasó, por qué importa y cómo te afecta.</p>
+    </details>
+    <details class="faq-item">
+      <summary>¿Kriptea es gratuita?</summary>
+      <p>Sí, completamente gratuita. Puedes descargarla desde Google Play sin costo y sin registro obligatorio para comenzar a leer noticias de criptomonedas.</p>
+    </details>
+    <details class="faq-item">
+      <summary>¿Qué criptomonedas cubre Kriptea?</summary>
+      <p>Kriptea cubre Bitcoin (BTC), Ethereum (ETH), DeFi, altcoins, stablecoins y el mercado cripto en general. Cada noticia incluye un indicador de sentimiento de mercado: alcista, bajista o neutral.</p>
+    </details>
+    <details class="faq-item">
+      <summary>¿Está disponible para iPhone o iOS?</summary>
+      <p>Por ahora Kriptea está disponible únicamente para Android a través de Google Play. Próximamente en más plataformas.</p>
+    </details>
+    <details class="faq-item">
+      <summary>¿Kriptea está disponible para Latinoamérica?</summary>
+      <p>Sí. Kriptea está pensada especialmente para usuarios hispanohablantes de Latinoamérica. El contenido está completamente en español y considera el impacto de las noticias cripto en la región.</p>
+    </details>
   </div>
 </section>
 

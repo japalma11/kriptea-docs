@@ -1,0 +1,74 @@
+# Kriptea — Noticias de Criptomonedas en Español
+
+> Kriptea es una app Android gratuita que entrega noticias de criptomonedas en español para usuarios de Latinoamérica. Simplifica Bitcoin, Ethereum, DeFi y altcoins con explicaciones claras y sentimiento de mercado por noticia.
+
+## Páginas del sitio
+
+- [Página principal](https://kriptea.com/) — Landing page de Kriptea
+- [Política de privacidad](https://kriptea.com/privacidad/) — Política de privacidad de la app
+- [Eliminar cuenta](https://kriptea.com/eliminar-cuenta/) — Instrucciones para eliminar tu cuenta
+
+## Descarga
+
+- [Descargar Kriptea en Google Play](https://play.google.com/store/apps/details?id=com.kriptea) — App gratuita para Android
+
+## Identidad
+
+- **Nombre:** Kriptea
+- **Empresa:** Kavzen
+- **Sitio web:** [kriptea.com](https://kriptea.com)
+- **Plataforma:** Android (Google Play)
+- **Precio:** Gratuita
+- **Idioma:** Español
+- **Mercado objetivo:** Latinoamérica y comunidad hispanohablante global
+- **Categoría:** App de noticias de criptomonedas
+
+## Qué hace Kriptea
+
+Kriptea agrega y simplifica noticias del mercado cripto publicándolas en español, sin tecnicismos. Cada noticia responde tres preguntas clave:
+
+1. ¿Qué pasó?
+2. ¿Por qué importa?
+3. ¿Cómo te afecta?
+
+Además, cada noticia incluye un indicador de sentimiento de mercado (alcista, bajista o neutral).
+
+## Cobertura
+
+- Bitcoin (BTC)
+- Ethereum (ETH)
+- DeFi (finanzas descentralizadas)
+- Altcoins
+- Stablecoins
+- Mercado cripto global con impacto en Latinoamérica
+
+## Métricas clave
+
+- Más de 50 noticias de criptomonedas por día
+- 100 % en español
+- Sin registro obligatorio para empezar a leer
+- Descarga gratuita
+
+## Contacto
+
+- **Email:** [privacidad@kriptea.com](mailto:privacidad@kriptea.com)
+
+## Preguntas frecuentes
+
+**¿Qué es Kriptea?**
+Kriptea es una aplicación gratuita para Android que entrega noticias de criptomonedas en español, sin tecnicismos. Cubre Bitcoin, Ethereum, DeFi, altcoins y el mercado cripto en general, con enfoque en Latinoamérica.
+
+**¿Cómo puedo leer noticias de criptomonedas en español?**
+Descargando [Kriptea gratis en Google Play](https://play.google.com/store/apps/details?id=com.kriptea). La app entrega más de 50 noticias de cripto diarias en español, explicadas de forma simple.
+
+**¿Kriptea es gratuita?**
+Sí, completamente gratuita. Sin costo y sin registro obligatorio para empezar.
+
+**¿Qué criptomonedas cubre?**
+Bitcoin (BTC), Ethereum (ETH), DeFi, altcoins, stablecoins y el mercado cripto en general.
+
+**¿Está disponible para iOS/iPhone?**
+Por ahora solo para Android. Próximamente en más plataformas.
+
+**¿Está pensada para Latinoamérica?**
+Sí. El contenido está en español con foco en el impacto de las noticias cripto en la región latinoamericana.
